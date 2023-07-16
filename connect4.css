@@ -1,0 +1,60 @@
+/* game board table */
+
+#board td {
+  width: 78px;
+  height: 78px;
+  border: solid 1px #666;
+}
+#game {
+  position: absolute;
+  top: 4rem;
+  left: 50%;
+  transform: translate(-50%);
+  width: 600px;
+  height: 600px;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid black;
+  box-shadow: 5px 5px rgba(0, 0, 0, 0.441);
+  padding: 1.5rem;
+}
+
+/* pieces are div within game table cells: draw as colored circles */
+
+.piece {
+  margin: 5px;
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+}
+
+/* column-top is table row of clickable areas for each column */
+
+#column-top td {
+  border: dashed 1px lightgray;
+}
+
+#column-top td:hover {
+  background-color: white;
+}
+
+@keyframes fall-animation {
+  from {
+    transform: translateY(-500px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+.piece {
+  animation-name: fall-animation;
+  animation-duration: 500ms;
+}
+.button {
+  top: 92%;
+  left: 55%;
+  width: 100px;
+  height: 40px;
+  position: absolute;
+  z-index: 2;
+  background: rgb(255, 255, 255);
+}
